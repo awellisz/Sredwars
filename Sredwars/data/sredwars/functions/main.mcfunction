@@ -47,20 +47,6 @@ scoreboard players add @e[type=snowball] flightTime 1
 execute as @e[type=armor_stand,tag=emGen] at @s run tp @s ~ ~ ~ ~2 ~
 execute as @e[type=armor_stand,tag=diaGen] at @s run tp @s ~ ~ ~ ~2 ~
 
-### DUMMY SECOND TIME FOR GENERATORS
-scoreboard players add @e[type=minecraft:armor_stand,tag=timer] secondTimer 1
-# Decrease emTimer and diaTimer once per second
-execute as @e[type=minecraft:armor_stand,tag=timer,scores={secondTimer=20..}] run scoreboard players remove @s emTimer 1
-execute as @e[type=minecraft:armor_stand,tag=timer,scores={secondTimer=20..}] run scoreboard players remove @s diaTimer 1
-scoreboard players reset @e[type=minecraft:armor_stand,tag=timer,scores={secondTimer=20..}] secondTimer
-
-### SPAWN EMERALDS
-execute as @e[scores={emTimer=..0}] at @e[type=minecraft:armor_stand,tag=emGen] run summon minecraft:item ~ ~1 ~ {Item:{id:"minecraft:emerald",Count:1b}}
-scoreboard players set @e[scores={emTimer=..0}] emTimer 60
-
-### SPAWN DIAMONDS
-execute as @e[scores={diaTimer=..0}] at @e[type=minecraft:armor_stand,tag=diaGen] run summon minecraft:item ~ ~1 ~ {Item:{id:"minecraft:diamond",Count:1b}}
-scoreboard players set @e[scores={diaTimer=..0}] diaTimer 45
 
 #####################
 ### POP-UP TOWERS ###
