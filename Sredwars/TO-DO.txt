@@ -1,0 +1,186 @@
+TO-DO
+
+1. Bed destruction system
+	Bed cannot be destroyed by own team
+	Bed cannot be blown up with TNT/fireballs
+	Upon destruction:
+		- chat reads "<Color> bed destroyed by <player>"
+		- Team with that bed gets title saying "Bed destroyed!" subtitle "you will no longer respawn"
+		- Team will no longer respawn -- instead of 5sec spectator mode upon death, permanent spectator mode
+
+2. Blocks
+	a. Wool
+		4 iron ingots for 16 wool
+		Shop for each team sells team color wool
+		Breakable by fireballs, TNT
+	b. Wood
+		4 gold ingots for 16 wood
+		breakable by fireballs, TNT
+		slightly more blast resistant than wool
+	c. brack proof grass
+		12 iron ingots for 4 glass
+		not breakable by fireballs, TNT
+	d. end stone
+		24 iron ingots for 12 end stone
+		breakable by TNT but not by fireballs
+		more blast resistant than wood
+	e. ladders
+		4 iron ingots for 16 ladders
+		breakable by fireballs, TNT
+		least blast resistance?
+	f. obsidian
+		4 emeralds for 4 obsidian
+		not breakable by fireballs, TNT
+
+
+3. Weapons
+
+	Always lost upon death
+	Stone sword: 10 iron
+	Gold sword: 7 gold
+	Diamond sword: 4 emeralds
+	Enchanted with sharpness I if team upgrade bought (keep track through scoreboard? tags?)
+
+	bows lost upon death as well
+	8 arrows: 2 gold
+	bow: 12 gold
+	power I bow: 24 gold
+	power I punch I bow: 6 emeralds
+
+	default weapon: wood sword, cannot be lost upon death
+
+
+4. Tools
+	System to keep track of tool upgrades by player
+	Upon death, tool downgraded one level
+	Once wood pickaxe or axe is bought, cannot be lost
+
+	Shears are permanent, 20 iron
+
+	Wood pickaxe (Eff 1): 10 iron
+	Iron pickaxe (Eff 2): 10 iron
+	Gold pickaxe (Eff 3, Sharp 2): 3 gold
+	Diamond pickaxe (Eff 3): 6 gold
+
+	Wood axe (eff 1): 10 iron
+	Stone axe (Eff 1): 10 iron
+	Iron axe (eff 2): 3 gold
+	Diamond axe (eff 3): 6 gold
+
+5. Potions
+
+	Shopkeeper sells
+	Speed 2, 45 sec: 1 emerald
+	Jump 5, 45 sec: 1 emerald
+	Invis, 30 sec: 2 emeralds
+
+	no particles for all 3
+
+	Invis mechanics
+	- automatically remove armor upon invis (to be totally invis)
+	- automatically replace armor if hit during invis (cancel invis) or when invis runs out
+
+6. Utilities
+
+	Shopkeeper sells
+
+	Golden apple: 3 gold
+		- no modifications
+	Bed bug (snowball): 40 iron
+		- snowball spawns silverfish upon impact
+		- attacks only enemy teams, not team that threw it
+		- dies after 15 sec automatically
+	Dream defender (iron golem): 120 iron
+		- no golem spawn egg so do polar bear spawn egg that spawns an iron golem
+		- only attacks enemy teams, not team that placed it
+		- dies after 240 sec automatically
+	Fireball (fire charge): 40 iron
+		- right click to shoot in straight line
+		- only destroys certain placeable blocks (wool, wood)
+		- player knockback
+		- maybe could be done by spawning invisible dispenser on an armor stand at player eyes and shoot fireball? or perhaps a moving invis armor stand with a lit fire charge in hand? idk
+	TNT: 8 gold
+		- one idea: creeper spawn egg that spawns lit TNT with a fuse of 50 ticks
+		- if possible, make it actual TNT that is instantly lit when placed
+		- only destroys certain blocks listed far above
+		- increase knockback to players and decrease damage to players
+	Ender pearl: 4 emeralds
+		- normal ender pearl
+		- if possible, make it not apply any damage when used
+		- maybe give players maximum resistance for 1 second when it lands? use vector notation to see how close it is to hitting a block and trigger resistance + regen
+	Water bucket: 6 gold
+		- empty water bucket disappears from inventory once water is placed, cannot be picked up again
+	Bridge egg (egg): 1 emerald
+		- egg that creates a wool block bridge along the thrown egg's path in the color of the team that threw it
+	Sponge x4: 6 gold
+		- no modifications (do we even need to put this in? it's never used)
+	Pop-up tower (chest): 24 gold
+		- pops up into a tower when placed
+		- hmmmm
+
+7. Diamond upgrades 
+	Sharpened swords: 8 diamonds
+		- sharpened swords applied to all swords and axes on team
+	Reinforced armor: 5, 10, 20, 30 diamonds (levels 1, 2, 3, 4)
+		- applies protection to all armor on team
+	Maniac miner: 4, 6 diamonds (levels 1, 2)
+		- gives haste effect 1 or 2 to all team members
+	Iron forge: 4 diamonds
+	Golden forge: 8 diamonds
+	Emerald forge: 12 diamonds
+		- begin spawning emeralds
+	Molten forge: 16 diamonds
+	Heal pool: 3 diamonds
+		- regen 1 around islands
+	Traps: It's a Trap! ; Counter-offensive trap ; Alarm Trap ; Miner Fatigue Trap (1 diamond)
+		- if possible, each extra trap (up to 3 total) costs 1 extra diamond
+	No need to create dragon buff or sudden death imo
+
+8. Trap logic
+	Triggered if enemy player comes within 8(?) blocks of bed; affects only 1 player at a time?
+	Lasts 10 seconds
+	It's a Trap!: Blindness, slowness to attackers
+	Miner Fatigue: miner fatigue to attackers
+	counteroffensive: jump boost 2, speed 2 to defending team
+	alarm trap: removes invis and sets off alarm sound
+
+	trap disappears after being triggered
+	No. of traps decreases by one
+	if incoming player has magic milk effect, do not trigger trap
+		magic milk could be substituted for an actual potion effect, like fire resistance or something to make it easier to detect if a player has it
+		or maybe drinking magic milk sets off a 45 sec timer with a scoreboard 
+
+
+9. Death logic
+	- when player falls below certain Y level:
+		- teleport to top of map
+		- set gamemode to spectator
+		- "You died!" title
+		- 5 second respawn countdown
+		- respawn right in front of forge of base
+	death messages are color coded
+
+
+	If bed is destroyed
+		- no title or countdown and no respawn
+		- would it be possible to create the compass tp spectator system?
+		- append FINAL KILL! in aqua to the end of the death message
+
+
+10. Armor
+	- all players start with leather armor
+	- armor upgrades are permanent and stay after death
+	- all armor has protection level dictated by diamond upgrades
+	- Chainmail armor: 40 iron
+	- Iron armor: 12 gold
+	- Diamond armor: 6 emeralds
+
+	Players that buy chain/iron/dia armor get tagged as such
+	Constantly running replaceitem command to set armor.legs and armor.feet to chain/iron/diamond
+
+
+
+add more concepts ive forgotten
+
+
+
