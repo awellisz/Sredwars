@@ -1,3 +1,5 @@
+execute as @a[scores={respawnTime=0,dead=1}] run function sredwars:on_respawn
+
 #DISPLAY RESPAWN COUNTDOWN TITLES
 title @a[scores={hasBed=1,respawnTime=1}] subtitle [{"text":"You will respawn in ","color":"yellow"},{"text":"1 ","color":"red"},{"text":"seconds.","color":"yellow"}]
 title @a[scores={hasBed=1,respawnTime=2}] subtitle [{"text":"You will respawn in ","color":"yellow"},{"text":"2 ","color":"red"},{"text":"seconds.","color":"yellow"}]
