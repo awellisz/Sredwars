@@ -3,7 +3,7 @@
 #####################################
 
 #teleport and make into spectator the dead
-tp @s 300 5 55
+tp @s 0 10 0
 gamemode spectator @s
 
 #Displays respawn message for those who can respawn
