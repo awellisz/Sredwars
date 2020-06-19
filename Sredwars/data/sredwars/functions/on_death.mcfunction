@@ -7,7 +7,7 @@ tp @s 0 10 0
 gamemode spectator @s
 
 #Displays respawn message for those who can respawn
-title @s times 0 1000 10
+title @s times 0 60 10
 title @s[scores={hasBed=1}] title {"text":"YOU DIED","color":"red"}
 title @s[scores={hasBed=1}] subtitle [{"text":"You will respawn in ","color":"yellow"},{"text":"5 ","color":"red"},{"text":"seconds.","color":"yellow"}]
 
