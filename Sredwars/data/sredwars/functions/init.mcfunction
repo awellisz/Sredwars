@@ -87,7 +87,6 @@ gamerule keepInventory false
 gamerule doWeatherCycle false
 gamerule doDaylightCycle false
 gamerule doFireTick false
-gamerule fireDamage false
 gamerule fallDamage true
 
 ### Title rules
