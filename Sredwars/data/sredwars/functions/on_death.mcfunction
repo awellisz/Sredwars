@@ -3,6 +3,7 @@
 #####################################
 
 #teleport and make into spectator the dead
+tell @s Just died!
 tp @s 0 10 0
 gamemode spectator @s
 
