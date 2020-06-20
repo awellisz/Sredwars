@@ -1,5 +1,5 @@
 #ON RESPAWN
-
+tell @s respawning!
 gamemode adventure @s
 
 title @s clear
