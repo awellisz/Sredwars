@@ -2,7 +2,10 @@
 ### INVISIBILITY POTION LOGIC ###
 #################################
 
+## Timer for invis time for armor
 scoreboard objectives add invis dummy
+## Temp health to detect if health has changed
+scoreboard objectives add tempHealth dummy
 
 execute as @a[nbt={ActiveEffects:[{Id:14b}]}] at @s run replaceitem entity @s armor.head air
 execute as @a[nbt={ActiveEffects:[{Id:14b}]}] at @s run replaceitem entity @s armor.chest air
@@ -10,6 +13,13 @@ execute as @a[nbt={ActiveEffects:[{Id:14b}]}] at @s run replaceitem entity @s ar
 execute as @a[nbt={ActiveEffects:[{Id:14b}]}] at @s run replaceitem entity @s armor.feet air
 
 execute as @a[nbt={ActiveEffects:[{Id:14b}]}] at @s run scoreboard players add @s invis 1
+
+#####################
+### DETECT DAMAGE ###
+#####################
+
+execute as @a[nbt={ActiveEffects:[{Id:14b}]}] if score @s tempHealth > @s playerHealth run scoreboard players set @s invis 600
+execute as @a[nbt={ActiveEffects:[{Id:14b}]}] run scoreboard players operation @s tempHealth = @s playerHealth
 
 #############################################
 ### ADD ARMOR BACK IN ONCE INVIS RUNS OUT ###
