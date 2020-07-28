@@ -18,7 +18,7 @@ scoreboard players set @a iron 0
 scoreboard players set @a drankPotion 0
 scoreboard players set @a pickTier 0
 scoreboard players set @a axeTier 0
-scoreboard players set @a invis 0
+scoreboard players set @a invis -1
 
 function sredwars:update_armor
 
