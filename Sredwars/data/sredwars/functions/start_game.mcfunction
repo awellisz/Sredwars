@@ -20,6 +20,9 @@ scoreboard players set @a pickTier 0
 scoreboard players set @a axeTier 0
 scoreboard players set @a invis -1
 
+## Reset generators
+kill @e[type=Item]
+
 function sredwars:update_armor
 
 tp @a[team=Alban] @e[tag=albanSpawn,type=armor_stand,limit=1]
