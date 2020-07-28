@@ -28,4 +28,4 @@ execute as @a[nbt={ActiveEffects:[{Id:14b}]}] run scoreboard players operation @
 execute as @a[scores={invis=600..}] run effect clear @s
 ### In update_armor, armor is only updated if your invis score is -1
 execute as @a[scores={invis=600..}] run scoreboard players set @s invis -1
-execute as @a[scores={invis=600..}] run function sredwars:update_armor
+execute as @a run function sredwars:update_armor
